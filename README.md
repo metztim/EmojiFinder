@@ -71,6 +71,8 @@ The font-support check renders every glyph once and compares it with the fallbac
 
 Glyphfinder was designed and built by [überdosis](https://github.com/ueberdosis), the team behind Tiptap. They discontinued it in 2022, invited forks, and this is one. The design, the curated dataset, and most of the app logic are their work.
 
+Why a fork rather than the original, checked on 18 September 2026: the upstream repository has been archived since October 2022 with 1.4.1 as its last version and no releases or tags, the app has been removed from Setapp, the glyphfinder.com domain has lapsed and now points at an unrelated site, and no Apple Silicon build was ever published. Without Rosetta the 1.4.1 build no longer starts on current Macs. If überdosis ever revives Glyphfinder, use theirs.
+
 Two licenses apply:
 
 - Everything added in this repository (the Electron, Vue, and build setup, the search worker and ranking, the dataset generator, the settings import, the documentation) is released under the [MIT License](LICENSE). Take it and do what you like with it.
