@@ -1,0 +1,44 @@
+:root {
+  --colorBackground: #F3F3F3;
+  --colorGlyphBackground: rgba(255, 255, 255, 0.7);
+  --colorGlyphDataBackground: rgba(255, 255, 255, 0.85);
+  --colorPreferencesOverlayBackground: #FFFFFF;
+  --colorSearchBackground: #FFFFFF;
+  --colorSwitchSliderChecked: #FFFFFF;
+  --colorSwitchSliderUnchecked: rgba(255, 255, 255, 0.8);
+  --colorSwitchSliderUncheckedHover: #FFFFFF;
+
+  --shadowGlyphData: 0px 0px 20px rgba(0, 0, 0, 0.12);
+
+  --colorBlack: 255, 255, 255;
+  --colorDarkGrey: 232, 232, 232;
+  --colorMediumGrey: 210, 210, 210;
+  --colorGreen: 40, 201, 65;
+  --colorRed: 255, 98, 77;
+  --colorWhite: 0, 0, 0;
+
+  --menuBarSize: 20px;
+
+  &.is-dark-mode {
+    --colorBackground: #000000;
+    --colorGlyphBackground: rgba(255, 255, 255, 0.09);
+    --colorGlyphDataBackground: rgba(40, 40, 40, 0.75);
+    --colorPreferencesOverlayBackground: #282828;
+    --colorSearchBackground: rgba(255, 255, 255, 0.09);
+    --colorSwitchSliderChecked: #FFFFFF;
+    --colorSwitchSliderUnchecked: rgba(255, 255, 255, 0.2);
+    --colorSwitchSliderUncheckedHover: rgba(255, 255, 255, 0.3);
+
+    --shadowGlyphData: 0px 0px 40px 2px rgba(0, 0, 0, 0.8), 0px 0px 8px 1px rgba(0, 0, 0, 0.4);
+
+    --colorBlack: 0, 0, 0;
+    --colorDarkGrey: 23, 23, 23;
+    --colorMediumGrey: 40, 40, 40;
+    --colorWhite: 255, 255, 255;
+  }
+
+  // A standalone window keeps the traffic lights; the drag strip must clear them.
+  &:not(.is-menubar) {
+    --menuBarSize: 40px;
+  }
+}

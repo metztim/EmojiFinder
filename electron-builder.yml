@@ -1,0 +1,39 @@
+appId: com.timmetz.emojifinder
+productName: EmojiFinder
+copyright: Based on Glyphfinder, Copyright © 2020 überdosis GbR
+artifactName: ${productName}-${version}-${arch}.${ext}
+directories:
+  buildResources: build
+  output: release
+files:
+  - out/**
+  - package.json
+  - '!src/**'
+  - '!data/**'
+  - '!scripts/**'
+  - '!docs/**'
+  - '!electron.vite.config.js'
+  - '!electron-builder.yml'
+  - '!README.md'
+extraResources:
+  - from: resources
+    to: resources
+npmRebuild: true
+afterPack: scripts/after-pack.cjs
+mac:
+  category: public.app-category.productivity
+  icon: build/icon.icns
+  target:
+    - target: dir
+      arch: arm64
+    - target: dmg
+      arch: arm64
+  identity: null
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  darkModeSupport: true
+  extendInfo:
+    NSUserNotificationAlertStyle: alert
+    LSMinimumSystemVersion: '13.0'
+dmg:
+  writeUpdateInfo: false

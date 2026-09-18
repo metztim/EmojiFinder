@@ -1,0 +1,36 @@
+{
+  "name": "emojifinder",
+  "productName": "EmojiFinder",
+  "version": "1.0.0",
+  "description": "Emoji and Unicode character search for macOS on Apple Silicon. A fork of Glyphfinder by überdosis.",
+  "author": "Tim Metz",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "data": "node scripts/build-data.mjs",
+    "dist": "electron-vite build && electron-builder --mac --arm64",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "flexsearch": "^0.8.212",
+    "matter-js": "^0.20.0",
+    "menubar": "^9.5.3",
+    "native-keymap": "^3.3.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.9",
+    "electron": "^40.0.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "emojibase-data": "^17.0.0",
+    "sass": "^1.104.1",
+    "vite": "^7.0.0",
+    "vue": "^3.5.43"
+  }
+}

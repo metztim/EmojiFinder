@@ -1,0 +1,38 @@
+<template>
+  <div class="clipboard-badge">
+    <div class="clipboard-badge__inner">
+      <icon class="clipboard-badge__icon" name="check" />
+      Copied to Clipboard
+    </div>
+  </div>
+</template>
+
+<script setup>
+import Icon from '@/components/Icon.vue'
+</script>
+
+<style lang="scss" scoped>
+.clipboard-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgb(var(--colorRed));
+    color: rgb(var(--colorBlack));
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0px 0px 40px 2px rgba(var(--colorBlack), 0.4), 0px 0px 8px 1px rgba(var(--colorBlack), 0.2);
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+  }
+}
+</style>

@@ -1,0 +1,22 @@
+// Full-screen overlays (preferences, loading, license) slide up from the bottom.
+.options-enter-active,
+.options-leave-active {
+  transform-origin: center 0%;
+  transition: transform 0.6s $easeInOutQuint;
+}
+
+.options-enter-from,
+.options-leave-to {
+  transform: translateY(100%) scale(1.1);
+}
+
+.clipboard-enter-active,
+.clipboard-leave-active {
+  transition: transform 0.2s $easeInOutQuad, opacity 0.2s $easeInOutQuad;
+}
+
+.clipboard-enter-from,
+.clipboard-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
