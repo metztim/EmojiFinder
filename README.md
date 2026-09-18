@@ -2,7 +2,9 @@
 
 Emoji and Unicode character search for macOS on Apple Silicon. Press a shortcut, type a word, copy the glyph.
 
-EmojiFinder is a fork of [Glyphfinder](https://github.com/ueberdosis/glyphfinder) by überdosis, which was discontinued in 2022 and only shipped as an Intel build. This fork rebuilds the app on a current Electron so it runs natively on M-series Macs, refreshes the emoji list, and ranks search results.
+EmojiFinder is a fork of [Glyphfinder](https://github.com/ueberdosis/glyphfinder) by überdosis, which was discontinued in 2022 and only shipped as an Intel build, so it no longer starts on Apple Silicon Macs without Rosetta. This fork rebuilds the app on a current Electron so it runs natively on M-series Macs, refreshes the emoji list, and ranks search results.
+
+Ready-to-run download: [latest release](https://github.com/metztim/EmojiFinder/releases/latest). Source: this repository.
 
 ## Features
 
@@ -15,11 +17,17 @@ EmojiFinder is a fork of [Glyphfinder](https://github.com/ueberdosis/glyphfinder
 - Light and dark mode, following the system or set by hand
 - Works offline; no account, no license key
 
-## Install
+## Download
 
-Download `EmojiFinder-<version>-arm64.dmg` from `release/` after a build, open it, and drag EmojiFinder to Applications. The build is ad-hoc signed, not notarized, so macOS asks once whether to open it (right-click the app, choose Open).
+Requires an Apple Silicon Mac running macOS 13 or later.
 
-On first launch EmojiFinder imports the preferences, shortcut, and usage history of an existing Glyphfinder installation. The old app and its data are left untouched.
+1. Download `EmojiFinder-<version>-arm64.dmg` from the [latest release](https://github.com/metztim/EmojiFinder/releases/latest).
+2. Open the DMG and drag EmojiFinder to Applications.
+3. Open EmojiFinder. macOS will say it cannot verify the app, because the build is not notarized with Apple. Open System Settings, go to Privacy & Security, scroll down, click "Open Anyway", and confirm. This is needed once.
+
+EmojiFinder then lives in the menu bar. Press Control + Command + G to open it, type, and press Enter to copy.
+
+If you had Glyphfinder installed, EmojiFinder imports its preferences, shortcut, and usage history on first launch. The old app and its data are left untouched.
 
 ## Development
 
@@ -59,11 +67,13 @@ The font-support check renders every glyph once and compares it with the fallbac
 
 `data/upstream-glyphs.json` is the Glyphfinder 1.4.1 dataset with the tags, sets, and look-alikes überdosis curated in their spreadsheet. `scripts/build-data.mjs` adds every emoji from `emojibase-data` that the upstream set lacks and widens the tags of existing emoji with the current CLDR keywords and shortcodes. Bump `emojibase-data` and run `npm run data` when a new Unicode version ships.
 
-## License
+## Credits and license
 
-The code is a fork of Glyphfinder and stays under its [license](LICENSE.md), Copyright © 2020 überdosis GbR. Two points to know:
+Glyphfinder was designed and built by [überdosis](https://github.com/ueberdosis), the team behind Tiptap. They discontinued it in 2022, invited forks, and this is one. The design, the curated dataset, and most of the app logic are their work.
 
-- The original asked users to buy a license key. This fork removes the key check and is free. The upstream license text asks that licensing features stay intact, while the upstream README invites forks; if you want to distribute this build, ask überdosis first (support@glyphfinder.com).
-- The upstream license does not allow reuse of the code in unrelated projects.
+Two licenses apply:
+
+- Everything added in this repository (the Electron, Vue, and build setup, the search worker and ranking, the dataset generator, the settings import, the documentation) is released under the [MIT License](LICENSE). Take it and do what you like with it.
+- The original Glyphfinder code, design, and assets stay under [überdosis's license](LICENSE-GLYPHFINDER.md), Copyright © 2020 überdosis GbR. It allows use, copying, modification, and distribution, but not reuse of the code in unrelated projects, and it asks that the license key check stay intact. This fork removed the key check and is free; überdosis has not been asked about that yet.
 
 Emoji data comes from [emojibase](https://emojibase.dev) (MIT). Inter is licensed under the SIL Open Font License.

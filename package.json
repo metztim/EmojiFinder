@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Emoji and Unicode character search for macOS on Apple Silicon. A fork of Glyphfinder by überdosis.",
   "author": "Tim Metz",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "type": "module",
   "main": "./out/main/index.js",
